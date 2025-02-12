@@ -1,0 +1,33 @@
+# Port exhibition
+server:
+  port: ${SERVER_PORT:8090}
+
+# spring boot configurations
+spring:
+  application:
+    name: vg.ms.enrollment
+  data:
+    mongodb:
+      uri: mongodb+srv://gabrielgutierrezq:3mbmCx8Gx6hrRKHY@as221s5prs2.1e7z9.mongodb.net/AS221S5PRS2?retryWrites=true&w=majority&appName=AS221S5PRS2
+# Microservice health meter
+management:
+  endpoint:
+    health:
+      show-details: always
+
+# Endpoint de actuator
+
+api:
+  version: api/v1
+
+# Swagger
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  api-docs:
+    path: /api/enrollment
+
+# External services
+services:
+  student:
+    url: ${STUDENT_SERVICE_URL:https://ms-vg-student-production.up.railway.app/public/api/v1/ubigeo/}
